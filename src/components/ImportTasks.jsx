@@ -10,7 +10,8 @@ const ImportTasks = ({ fetchTasks }) => {
     if (!sheetUrl) return alert("Please enter a sheet URL or leave empty for local CSV test");
     try {
       setLoading(true);
-      const res = await axios.post("https://task-manager-backend.vercel.app/tasks/import", { sheetUrl });
+      // Updated backend URL
+      const res = await axios.post("https://task-manager-backend-dxm4.vercel.app/tasks/import", { sheetUrl });
       setMessage(res.data.message);
       setSheetUrl("");
       fetchTasks(); // refresh tasks table
