@@ -14,7 +14,7 @@ const TaskTable = forwardRef((props, ref) => {
   // Fetch all tasks
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/tasks");
+      const res = await axios.get("https://task-manager-backend.vercel.app/tasks");
       setTasks(res.data);
     } catch (err) {
       console.error("Error fetching tasks:", err);
@@ -28,7 +28,7 @@ const TaskTable = forwardRef((props, ref) => {
   // Toggle completion
   const handleToggle = async (task) => {
     try {
-      await axios.put(`http://localhost:5000/tasks/${task._id}`, {
+      await axios.put(`https://task-manager-backend.vercel.app/tasks/${task._id}`, {
         completed: !task.completed
       });
       fetchTasks();
@@ -50,7 +50,7 @@ const TaskTable = forwardRef((props, ref) => {
   // Save changes
   const handleSave = async (taskId) => {
     try {
-      await axios.put(`http://localhost:5000/tasks/${taskId}`, editData);
+      await axios.put(`https://task-manager-backend.vercel.app/tasks/${taskId}`, editData);
       setEditTaskId(null);
       fetchTasks();
     } catch (err) {
@@ -66,7 +66,7 @@ const TaskTable = forwardRef((props, ref) => {
   // Delete task
   const handleDelete = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:5000/tasks/${taskId}`);
+      await axios.delete(`https://task-manager-backend.vercel.app/tasks/${taskId}`);
       fetchTasks();
     } catch (err) {
       console.error("Error deleting task:", err);

@@ -12,7 +12,7 @@ const AddTask = ({ fetchTasks }) => {
     if (!title) return alert("Title is required");
     try {
       setLoading(true);
-       await axios.post("http://localhost:5000/tasks", { title, description, dueDate });
+       await axios.post("https://task-manager-backend.vercel.app/tasks", { title, description, dueDate });
       setMessage("Task added successfully");
       setTitle("");
       setDescription("");
