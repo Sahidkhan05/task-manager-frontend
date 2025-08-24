@@ -13,7 +13,7 @@ const AddTask = ({ fetchTasks }) => {
     try {
       setLoading(true);
       // Updated backend URL
-      await axios.post("https://task-manager-backend-dxm4.vercel.app/tasks", { title, description, dueDate });
+      await axios.post("https://task-manager-backend-u7ug.vercel.app/tasks", { title, description, dueDate });
       setMessage("Task added successfully");
       setTitle("");
       setDescription("");

@@ -11,7 +11,7 @@ const ImportTasks = ({ fetchTasks }) => {
     try {
       setLoading(true);
       // Updated backend URL
-      const res = await axios.post("https://task-manager-backend-dxm4.vercel.app/tasks/import", { sheetUrl });
+      const res = await axios.post("https://task-manager-backend-u7ug.vercel.app/tasks/import", { sheetUrl });
       setMessage(res.data.message);
       setSheetUrl("");
       fetchTasks(); // refresh tasks table
